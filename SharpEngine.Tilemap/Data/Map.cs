@@ -1,7 +1,7 @@
 namespace SharpEngine.Tilemap.Data;
 
 /// <summary>
-/// Class with represents Map informations
+/// Class with represents Map information
 /// </summary>
 public class Map
 {

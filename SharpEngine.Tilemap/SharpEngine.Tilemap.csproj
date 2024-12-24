@@ -1,13 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFramework>net7.0</TargetFramework>
+        <TargetFramework>net8.0</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Description>Tilemap Package of SharpEngine - 2D Game Engine</Description>
         <PackageProjectUrl />
         <Authors>LavaPower</Authors>
         <Company>LavaPower</Company>
-        <Copyright>Copyright (c) LavaPower 2021-2023</Copyright>
+        <Copyright>Copyright (c) LavaPower 2021-2024</Copyright>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <PackageProjectUrl>https://github.com/SharpEngine/SharpEngine.Tilemap</PackageProjectUrl>
         <PackageVersion>1.0.0</PackageVersion>
@@ -27,7 +27,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="SharpEngine.Core" Version="1.5.0" />
+      <PackageReference Include="SharpEngine.Core" Version="1.9.3" />
     </ItemGroup>
 
 </Project>

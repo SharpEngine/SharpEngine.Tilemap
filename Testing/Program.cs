@@ -10,11 +10,8 @@ internal static class Program
     private static void Main()
     {
         SETilemap.AddVersions();
-        
-        var window = new Window(1280, 920, "SE Tilemap", Color.CornflowerBlue, null, true, true, true)
-        {
-            RenderImGui = DebugManager.CreateSeImGuiWindow
-        };
+
+        var window = new Window(1280, 920, "SE Tilemap", Color.CornflowerBlue, null, true, true, true);
         
         window.AddScene(new MyScene());
         
