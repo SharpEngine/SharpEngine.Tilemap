@@ -13,8 +13,8 @@ public class Tile
     /// <summary>
     /// Path of Texture
     /// </summary>
-    public required string Path { get; set; }
-    
+    public required string Image { get; set; }
+
     /// <summary>
     /// X Position of Tile (for tilesheet)
     /// </summary>

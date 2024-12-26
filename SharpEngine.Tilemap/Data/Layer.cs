@@ -10,5 +10,5 @@ public class Layer
     /// <summary>
     /// List of Tiles ID in the layer
     /// </summary>
-    public required List<int> Tiles { get; set; }
+    public required List<int?> Tiles { get; set; }
 }

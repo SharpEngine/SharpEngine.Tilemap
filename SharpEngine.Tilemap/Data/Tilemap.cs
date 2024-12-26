@@ -11,11 +11,16 @@ public class Tilemap
     /// Map Informations of TileMap
     /// </summary>
     public required Map Map { get; set; }
-    
+
     /// <summary>
-    /// Tileset of TileMap
+    /// Images of TileMap
     /// </summary>
-    public required List<Tile> Tileset { get; set; }
+    public required List<Image> Images { get; set; }
+
+    /// <summary>
+    /// Tiles of TileMap
+    /// </summary>
+    public required List<Tile> Tiles { get; set; }
     
     /// <summary>
     /// Layers of TileMap

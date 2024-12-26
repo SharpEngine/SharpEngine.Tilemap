@@ -6,10 +6,10 @@ namespace SharpEngine.Tilemap.Data;
 public class Map
 {
     /// <summary>
-    /// Format of Map (currently : 1)
+    /// Name of Map
     /// </summary>
-    public required int Format { get; set; }
-    
+    public required string Name { get; set; }
+
     /// <summary>
     /// Width of Map in Tiles
     /// </summary>
