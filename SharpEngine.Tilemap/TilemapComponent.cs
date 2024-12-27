@@ -1,11 +1,14 @@
 using SharpEngine.Core;
 using SharpEngine.Core.Component;
+using SharpEngine.Core.Entity;
 using SharpEngine.Core.Math;
 using SharpEngine.Core.Renderer;
 using SharpEngine.Core.Utils;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Security.AccessControl;
 using System.Text.Json;
 
 namespace SharpEngine.Tilemap;
@@ -45,6 +48,36 @@ public class TilemapComponent: Component
 
         foreach (var image in Tilemap.Images)
             Entity?.Scene?.Window?.TextureManager.AddTexture(image.Name, image.Path);
+
+        foreach (var entity in Tilemap.Entities ?? [])
+        {
+            Type? type = null;
+            
+            foreach (var assembly in AppDomain.CurrentDomain.GetAssemblies())
+            {
+                var typeTemp = assembly.GetType(entity.Class);
+                if (typeTemp != null)
+                {
+                    type = typeTemp;
+                    break;
+                }
+            }
+
+            if (Activator.CreateInstance(type ?? throw new Exception($"Entity Class {entity.Class} not found")) is not Entity e)
+                throw new Exception($"Entity Class {entity.Class} is not an SharpEngine Entity");
+
+            if (e.GetComponentAs<TransformComponent>() is TransformComponent transform && _transform != null)
+            {
+                transform.LocalPosition = new Vec2(
+                    entity.XTile * Tilemap.Map.TileWidth * _transform.Scale.X,
+                    entity.YTile * Tilemap.Map.TileHeight * _transform.Scale.Y
+                );
+
+                transform.LocalZLayer = 1;
+            }
+
+            Entity?.AddChild(e).Load();
+        }
 
     }
 

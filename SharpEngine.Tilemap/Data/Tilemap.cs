@@ -26,4 +26,9 @@ public class Tilemap
     /// Layers of TileMap
     /// </summary>
     public required List<Layer> Layers { get; set; }
+
+    /// <summary>
+    /// Entities of TileMap
+    /// </summary>
+    public List<Entity>? Entities { get; set; }
 }
