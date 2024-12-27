@@ -12,6 +12,6 @@ public static class SETilemap
     /// </summary>
     public static void AddVersions()
     {
-        DebugManager.Versions.Add("SharpEngine.Tilemap", "1.0.0");
+        DebugManager.Versions.Add("SharpEngine.Tilemap", "1.1.0");
     }
 }
