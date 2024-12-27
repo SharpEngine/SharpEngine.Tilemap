@@ -65,5 +65,12 @@
         1, 1, 1, 1, 1
       ]
     }
-  ] 
+  ],
+  "Entities": [
+    {
+      "Class": "Testing.Movable",
+      "XTile": 3,
+      "YTile": 3
+    }
+  ]
 }
